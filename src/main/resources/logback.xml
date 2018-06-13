@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d %-5level [%logger{36}] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT_NOF" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.ss8" level="INFO"/>
+
+    <logger name="com.aestasit.infrastructure.ssh.log" level="INFO"
+            additivity="false">
+        <appender-ref ref="STDOUT_NOF"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
